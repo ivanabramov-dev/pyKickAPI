@@ -65,6 +65,7 @@ class Stream(KickObject):
         thumbnail: str
         url: str
         viewer_count: int
+        custom_tags: list[str]
 
 
 @dataclasses.dataclass
@@ -76,6 +77,8 @@ class Channel(KickObject):
         stream_title: str
         category: Category | None
         stream: Stream | None
+        active_subscribers_count: int
+        canceled_subscribers_count: int
 
         @property
         def user_id(self) -> int:
