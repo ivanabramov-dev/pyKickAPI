@@ -4,6 +4,7 @@ from __future__ import annotations
 from datetime import datetime
 
 from pydantic import dataclasses  # Field
+from typing import Optional
 
 from betterKickAPI.object.base import KickObject, KickObjectExtras  # AsyncIterKickObject,
 
@@ -65,7 +66,8 @@ class Stream(KickObject):
         thumbnail: str
         url: str
         viewer_count: int
-        custom_tags: list[str]
+
+        custom_tags: Optional[list] = None
 
 
 @dataclasses.dataclass
